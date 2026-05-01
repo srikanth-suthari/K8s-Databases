@@ -15,3 +15,15 @@ spec:
       targetPort: 3306
 ---
 apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  selectors:
+    project: roboshoop
+    env: dev
+    tier: db
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort:  3306
