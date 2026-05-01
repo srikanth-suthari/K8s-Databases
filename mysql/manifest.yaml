@@ -27,3 +27,30 @@ spec:
     - protocol: TCP
       port: 3306
       targetPort:  3306
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+  labels:
+    project: roboshoop
+    env: dev
+    tier: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: roboshoop
+      env: dev
+      tier: db
+  template:
+    metadata:
+      name: mysql
+      labels:
+        project: roboshoop
+        env: dev
+        tier: db
+    spec:
+      containers:
+        - name: mysql
+          image: srikanthsuthari/mysql:v2
