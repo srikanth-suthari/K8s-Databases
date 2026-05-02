@@ -37,6 +37,7 @@ metadata:
     project: roboshop
     tier: db
 spec:
+  serviceName: rabbitmq-hl
   replicas: 1
   selector:
     matchLabels:
