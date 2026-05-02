@@ -28,7 +28,7 @@ spec:
     project: roboshop
     tier: db
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: rabbitmq
@@ -54,4 +54,3 @@ spec:
       containers:
         - name: rabbitmq
           image: srikanthsuthari/rabbitmq:v2
-          
