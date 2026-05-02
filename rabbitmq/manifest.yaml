@@ -13,4 +13,18 @@ spec:
     name: rabbitmq
     project: roboshop
     tier: db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+spec:
+  ports:
+    - protocol: TCP
+      port: 2367
+      targetPort: 2367
+  selector:
+    name: rabbitmq
+    project: roboshop
+    tier: db
     
