@@ -27,4 +27,31 @@ spec:
     name: rabbitmq
     project: roboshop
     tier: db
-    
+---
+apiVersion: v1
+kind: StatefulSet
+metadata:
+  name: rabbitmq
+  labels:
+    name: rabbitmq
+    project: roboshop
+    tier: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: rabbitmq
+      project: roboshop
+      tier: db
+  template:
+    metadata:
+      name: rabbitmq
+      labels:
+        name: rabbitmq
+        project: roboshoop
+        tier: db
+    spec:
+      containers:
+        - name: rabbitmq
+          image: srikanthsuthari/rabbitmq:v2
+          
