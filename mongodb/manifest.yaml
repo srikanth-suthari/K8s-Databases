@@ -6,7 +6,8 @@ spec:
   ClusterIP: None
   selector:
     name: mongodb
-    env: db
+    project: roboshop
+    tier: db
   ports:
   - protocol: TCP
     port: 27017
@@ -19,7 +20,8 @@ metadata:
 spec:
   selector:
     name: mongodb
-    env: db
+    project: roboshop
+    tier: db
   ports:
   - protocol: TCP
     port: 27017
@@ -32,6 +34,7 @@ metadata:
   namespace: roboshop
 serviceName: mongodb-hl
 spec:
+  serviceName: mongodb-hl
   replicas: 1
   selector:
     matchLabels:
