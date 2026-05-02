@@ -1,0 +1,16 @@
+# Headless Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-hl
+spec:
+  ClusterIP: None
+  ports:
+    - protocol: TCP
+      port: 2367
+      targetPort: 2367
+  selector:
+    name: rabbitmq
+    project: roboshop
+    tier: db
+    
