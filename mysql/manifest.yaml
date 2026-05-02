@@ -37,6 +37,7 @@ metadata:
     env: dev
     tier: db
 spec:
+  serviceName: mysql-hl
   replicas: 1
   selector:
     matchLabels:
