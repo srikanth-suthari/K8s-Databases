@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: rabbitmq-hl
 spec:
-  ClusterIP: None
+  clusterIP: None
   ports:
     - protocol: TCP
       port: 2367
