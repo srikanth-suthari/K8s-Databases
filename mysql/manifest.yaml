@@ -8,7 +8,7 @@ spec:
     project: roboshoop
     env: dev
     tier: db
-  ClusterIP: None
+  clusterIP: None
   ports:
     - protocol: TCP
       port: 3306
