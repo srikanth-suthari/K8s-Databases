@@ -32,7 +32,6 @@ kind: StatefulSet
 metadata:
   name: mongodb
   namespace: roboshop
-serviceName: mongodb-hl
 spec:
   serviceName: mongodb-hl
   replicas: 1
