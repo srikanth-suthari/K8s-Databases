@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: mongodb-hl
 spec:
-  ClusterIP: None
+  clusterIP: None
   selector:
     name: mongodb
     project: roboshop
