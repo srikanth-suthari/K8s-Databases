@@ -10,8 +10,8 @@ spec:
     tier: db
   ports:
   - protocol: TCP
-    port: 27017
-    targetPort: 27017
+    port: 27017     #Service Port
+    targetPort: 27017     #Container Port
 ---
 apiVersion: v1
 kind: Service
