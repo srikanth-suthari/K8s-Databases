@@ -5,7 +5,7 @@ metadata:
 spec:
   clusterIP: None
   selector:
-    name: mongodb
+    component: mongodb
     project: roboshop
     tier: db
   ports:
@@ -19,7 +19,7 @@ metadata:
   name: mongodb
 spec:
   selector:
-    name: mongodb
+    component: mongodb
     project: roboshop
     tier: db
   ports:
@@ -37,14 +37,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: mongodb
+      component: mongodb
       project: roboshop
       tier: db
   template:
     metadata:
       name: mongodb
       labels:
-        name: mongodb
+        component: mongodb
         project: roboshop
         tier: db
     spec:
@@ -55,4 +55,3 @@ spec:
           - name: mongodb-vol
             mounthPath: /db//data
     volumeClaimTemplate:
-        
