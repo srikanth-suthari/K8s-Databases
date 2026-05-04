@@ -36,7 +36,7 @@ metadata:
   namespace: roboshop
 spec:
   serviceName: mongodb-hl     # this should be head less service name
-  replicas: 1
+  replicas: 2       # by default is 1
   selector:
     matchLabels:
       component: mongodb
@@ -53,7 +53,8 @@ spec:
       containers:
         - name: mongodb
           image: srikanthsuthari/mongodb:v2
-      volumesMounts:
-          - name: mongodb-vol
-            mounthPath: /db//data
+          volumesMounts:
+            - name: mongodb-vol
+              mounthPath: /data/db
+    # This is PVC
     volumeClaimTemplate:
