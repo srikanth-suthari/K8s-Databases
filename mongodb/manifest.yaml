@@ -58,3 +58,12 @@ spec:
               mounthPath: /data/db
     # This is PVC
     volumeClaimTemplate:
+      - metadata:
+          name: mongodb
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: "roboshop-ebs"
+          resources:
+            requests:
+              storage: 1Gi
+
