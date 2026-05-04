@@ -27,8 +27,8 @@ spec:
     tier: db
   ports:
     - protocol: TCP
-      port: 3306
-      targetPort:  3306
+      port: 3306    # Service port
+      targetPort:  3306   # Container port
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -39,7 +39,7 @@ metadata:
     env: dev
     tier: db
 spec:
-  serviceName: mysql-hl
+  serviceName: mysql-hl   # This should be the headless service
   replicas: 1
   selector:
     matchLabels:
@@ -57,3 +57,15 @@ spec:
       containers:
         - name: mysql
           image: srikanthsuthari/mysql:v2
+          volumeMounts:
+            - name: mysql
+              mountPath: /var/lib/mysql
+    volumeClaimTemplate:
+      - metadata:
+          name: mysql
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: roboshop-ebs
+          resources:
+            requests:
+              storage: 1Gi
