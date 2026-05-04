@@ -35,7 +35,7 @@ metadata:
   name: mongodb
   namespace: roboshop
 spec:
-  serviceName: mongodb-hl
+  serviceName: mongodb-hl     # this should be head less service name
   replicas: 1
   selector:
     matchLabels:
