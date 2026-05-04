@@ -34,6 +34,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: rabbitmq
+  namespace: roboshop
   labels:
     component: rabbitmq
     project: roboshop
