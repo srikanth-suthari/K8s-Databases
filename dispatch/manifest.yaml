@@ -8,3 +8,34 @@ data:
   AMQP_USER: "roboshop"
   AMQP_PASS: "roboshop123"
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dispatch
+  namespace: roboshop
+  labels:
+    project: roboshop
+    component: dispatch
+    tier: backend
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        project: roboshop
+        component: dispatch
+        tier: backend
+    template:
+      metadata:
+        name: dispatch
+        labels:
+          project: roboshop
+          component: dipatch
+          tier: backend
+      spec:
+        containers:
+          - name: payment
+            image: srikanthsuthari/payment:v2
+            envFrom:
+              - configMapRef:
+                  name: payment
+---
