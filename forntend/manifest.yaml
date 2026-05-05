@@ -68,3 +68,34 @@ data:
         }
     }
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: roboshop
+  labels:
+    project: roboshop
+    component: frontend
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: roboshop
+      component: frontend
+      tier: frontend
+  template:
+    matadata:
+      name: frontend
+      labels:
+        project: roboshop
+        component: frontend
+        tier: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: srikanthsuthari/frontend:v1
+          envFrom:
+            - configMapRef:
+                name: frontend
+---
