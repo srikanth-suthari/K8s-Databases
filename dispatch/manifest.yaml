@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dispatch
+  namespace: roboshop
+data:
+  AMQP_HOST: "rabbitmq"
+  AMQP_USER: "roboshop"
+  AMQP_PASS: "roboshop123"
+---
