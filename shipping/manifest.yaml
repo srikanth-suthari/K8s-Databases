@@ -7,4 +7,34 @@ data:
   CART_ENDPOINT: "cart:8080"
   DB_HOST: "mysql"
 ---
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping
+  namespace: roboshop
+  labels:
+    project: roboshop
+    component: shipping
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: roboshop
+      component: shipping
+      tier: backend
+  template:
+    metadata:
+      name: shipping
+      labels:
+        project: roboshop
+        component: shipping
+        tier: backend
+    spec:
+      containers:
+        - name: shipping
+          image: srikanthsuthari/shipping:v2
+          envFrom:
+            - configMapRef:
+                name: catalogue
+---
