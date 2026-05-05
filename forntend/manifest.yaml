@@ -99,3 +99,17 @@ spec:
             - configMapRef:
                 name: frontend
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: roboshop
+spec:
+  selector:
+    project: roboshop
+    component: frontend
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
