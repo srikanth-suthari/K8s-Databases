@@ -12,6 +12,10 @@ kind: Deployment
 metadata:
   name: user
   namespace: roboshop
+  labels:
+    project: roboshop
+    component: user
+    tier: backend
 spec:
   replicas: 1
   selector:
