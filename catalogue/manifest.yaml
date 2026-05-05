@@ -1,3 +1,5 @@
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -25,3 +27,5 @@ spec:
       containers:
         - name: catalogue
           image: srikanthsuthari/catalogue:v2
+          imagePullPolicy: Always
+---
