@@ -41,3 +41,15 @@ spec:
 ---
 apiVersion: v1
 kind: Service
+metadata:
+  name: payment
+  namespace: roboshop
+spec:
+  selector:
+    project: roboshop
+    component: payment
+    tier: backend
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
