@@ -36,7 +36,7 @@ metadata:
   namespace: roboshop
 spec:
   serviceName: mongodb-hl     # this should be head less service name
-  replicas: 2       # by default is 1
+  replicas: 1       # by default is 1
   selector:
     matchLabels:
       component: mongodb
@@ -66,4 +66,3 @@ spec:
         resources:
           requests:
             storage: 1Gi
-
