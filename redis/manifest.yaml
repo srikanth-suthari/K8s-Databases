@@ -58,7 +58,7 @@ spec:
               mountPath: /data
   volumeClaimTemplates:
     - metadata:
-        name: roboshop
+        name: redis
       spec:
         accessModes: [ "ReadWriteOnce" ]
         storageClassName: roboshop-ebs
