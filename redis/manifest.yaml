@@ -36,7 +36,7 @@ metadata:
   namespace: roboshop
 spec:
   serviceName: redis-hl     # name of the headless service
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       component: redis
