@@ -21,7 +21,7 @@ metadata:
   name: mysql
   namespace: roboshop
 spec:
-  selectors:
+  selector:
     project: roboshoop
     component: mysql
     tier: db
