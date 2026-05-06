@@ -57,7 +57,7 @@ spec:
           voumeMounts:
             - name: rabbitmq
               mountPath: /var/lib/rabbitmq
-  volumeClaimTemplate:
+  volumeClaimTemplates:
     - metadata:
         name: rabbitmq
       spec:
