@@ -35,10 +35,6 @@ kind: StatefulSet
 metadata:
   name: rabbitmq
   namespace: roboshop
-  labels:
-    component: rabbitmq
-    project: roboshop
-    tier: db
 spec:
   serviceName: rabbitmq-hl
   replicas: 1
@@ -61,12 +57,12 @@ spec:
           voumeMounts:
             - name: rabbitmq
               mountPath: /var/lib/rabbitmq
-    volumeClaimTemplate:
-      - metadata:
-          name: rabbitmq
-        spec:
-          accessModes: [ "ReadWriteOnce" ]
-          storageClassName: roboshop-ebs
-          resources:
-            requests:
-              storage: 1Gi
+  volumeClaimTemplate:
+    - metadata:
+        name: rabbitmq
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: roboshop-ebs
+        resources:
+          requests:
+            storage: 1Gi
