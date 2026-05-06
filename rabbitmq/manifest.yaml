@@ -54,7 +54,7 @@ spec:
       containers:
         - name: rabbitmq
           image: srikanthsuthari/rabbitmq:v2
-          voumeMounts:
+          voulmeMounts:
             - name: rabbitmq
               mountPath: /var/lib/rabbitmq
   volumeClaimTemplates:
