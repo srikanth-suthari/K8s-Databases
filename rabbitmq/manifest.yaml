@@ -36,6 +36,8 @@ metadata:
   name: rabbitmq
   namespace: roboshop
 spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Delete
   serviceName: rabbitmq-hl
   replicas: 1
   selector:
