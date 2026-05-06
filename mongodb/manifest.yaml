@@ -53,9 +53,9 @@ spec:
       containers:
         - name: mongodb
           image: srikanthsuthari/mongodb:v2
-      volumeMounts:
-        - name: mongodb-vol
-          mounthPath: /data/db
+          volumeMounts:
+            - name: mongodb-vol
+              mountPath: /data/db
     # This is PVC
     volumeClaimTemplate:
       - metadata:
