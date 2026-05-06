@@ -35,10 +35,6 @@ kind: StatefulSet
 metadata:
   name: mysql
   namespace: roboshop
-  labels:
-    project: roboshoop
-    env: dev
-    tier: db
 spec:
   serviceName: mysql-hl   # This should be the headless service
   replicas: 1
@@ -61,12 +57,12 @@ spec:
           volumeMounts:
             - name: mysql
               mountPath: /var/lib/mysql
-    volumeClaimTemplate:
-      - metadata:
-          name: mysql
-        spec:
-          accessModes: [ "ReadWriteOnce" ]
-          storageClassName: roboshop-ebs
-          resources:
-            requests:
-              storage: 1Gi
+  volumeClaimTemplate:
+    - metadata:
+        name: mysql
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: roboshop-ebs
+        resources:
+          requests:
+            storage: 1Gi
