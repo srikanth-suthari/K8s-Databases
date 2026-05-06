@@ -34,10 +34,6 @@ kind: StatefulSet
 metadata:
   name: redis
   namespace: roboshop
-  labels:
-    component: redis
-    project: roboshop
-    tier: db
 spec:
   serviceName: redis-hl     # name of the headless service
   replicas: 2
